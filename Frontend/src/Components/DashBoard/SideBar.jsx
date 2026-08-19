@@ -3,77 +3,83 @@ import { FaDatabase } from 'react-icons/fa';
 import { IoIosSettings } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import { MdDashboard, MdEmergency, MdOutlineLocalHospital } from "react-icons/md";
+import Logo from '../../assets/imgs/Logo.png'
 
 const SideBar = () => {
     return (
-        <aside className='hidden md:flex flex-col h-screen py-4 px-2 backdrop-blur-xl fixed left-0 top-0 w-64 border-r border-gray-600/20 z-50 bg-white'>
+        <aside className='hidden md:flex flex-col h-screen py-2 pb-5 px-3 fixed left-0 top-0 w-64 border-r border-slate-200 z-50 bg-white cursor-default'>
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-8 px-2">
-                <div className="w-10 h-10 rounded-lg bg-green-700 flex items-center justify-center shadow-sm">
-                    <span className="text-white text-2xl flex justify-center items-center">
-                        <MdOutlineLocalHospital size={28} />
-                    </span>
-                </div>
-
-                <div>
-                    <h1 className="font-bold text-2xl text-green-700">
-                        Vitality Pulse
-                    </h1>
-
-                    <p className="font-medium text-xs text-gray-600">
-                        SIH Portal
-                    </p>
-                </div>
+            <div className='relative mb-4'>
+                <img src={Logo} alt="" className='w-full h-20' />
+                <p className='absolute bottom-1.5 right-1/6 text-xs text-blue-700 font-bold uppercase tracking-[0.35em]'>dashboard</p>
             </div>
 
-            <nav className='flex-1 space-y-2'>
+            <nav className='flex-1 space-y-1'>
                 <a
-                    className="flex items-center gap-3 px-4 py-3 bg-green-50 text-green-700 rounded-xl font-bold transition-all"
-                >
-                    <span
-                        className="text-2xl"
-                        style={{ fontVariationSettings: "'FILL' 1" }}
+                    className="group flex w-full items-center gap-3 rounded-xl px-4 py-1.5 bg-cyan-50 text-sky-600 transition-all duration-200 hover:bg-cyan-100 active:scale-[0.98]">
+                    {/* Icon */}
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/70 text-sky-600 shadow-sm transition-all duration-200 group-hover:bg-white"
                     >
-                        <MdDashboard size={23} />
+                        <MdDashboard size={21} />
                     </span>
 
-                    <span className="font-label-lg text-label-lg">Dashboard</span>
+                    {/* Label */}
+                    <span className="font-semibold tracking-wide">
+                        Dashboard
+                    </span>
+
+                    {/* Active indicator */}
+                    <span className="ml-auto h-2 w-2 rounded-full bg-sky-500" />
                 </a>
 
                 <a
-                    className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all"
-                >
-                    <span className="material-symbols-outlined">
+                    className="group flex w-full items-center gap-3 rounded-xl px-4 py-1.5 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900 active:scale-[0.98]">
+                    {/* Icon */}
+                    <span
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-white group-hover:text-slate-700">
                         <FaDatabase size={18} />
                     </span>
 
-                    <span className="font-label-lg text-label-lg">Data Management</span>
+                    {/* Label */}
+                    <span className="font-medium">
+                        Data Management
+                    </span>
                 </a>
             </nav>
 
             {/* Bottom Actions */}
             <div className="mt-auto space-y-4">
-                <button className="w-full py-3 px-4 bg-green-700 text-white rounded-xl font-bold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-green-700/20">
+                <button className="w-full py-3 px-4 bg-rose-600 text-white rounded-xl font-bold text-sm hover:bg-rose-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-rose-600/20">
                     <span className="text-2xl"><MdEmergency size={18} /></span>
                     Emergency Alert
                 </button>
 
-                <div className="pt-4 border-t border-gray-400/70 space-y-2">
+                <div className="border-t border-slate-200 space-y-1">
                     <a
-                        className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all"
-                    >
-                        <span className="text-2xl"><IoIosSettings size={20} /></span>
+                        className="group flex w-full items-center gap-2 rounded-xl px-4 py-1.5 text-slate-500 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900 active:scale-[0.98]">
+                        <span className=" flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-white group-hover:text-slate-700"
+                        >
+                            <IoIosSettings size={20} />
+                        </span>
 
-                        <span className="text-base">Settings</span>
+                        <span className="text-sm font-medium">
+                            Settings
+                        </span>
                     </a>
 
-                    <a
-                        className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all"
-                    >
-                        <span className="text-2xl"><CiLogout size={20} /></span>
+                    {/* Logout */}
+                    <button
+                        type="button"
+                        className=" group flex w-full items-center gap-2 rounded-xl px-4 py-1.5 text-slate-500 transition-all duration-200 hover:bg-red-50 hover:text-red-600 active:scale-[0.98]">
+                        <span
+                            className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-red-100 group-hover:text-red-600">
+                            <CiLogout size={20} />
+                        </span>
 
-                        <span className="text-base">Logout</span>
-                    </a>
+                        <span className="text-sm font-medium">
+                            Logout
+                        </span>
+                    </button>
                 </div>
             </div>
         </aside>

@@ -22,8 +22,12 @@ const HeroSection = () => {
                     </p>
 
                     <div className="grid grid-cols-2 gap-3 pt-3 md:gap-4 lg:pt-5">
-                        {/* Find Hospital */}
-                        <div className='group flex cursor-pointer flex-1 flex-col justify-between rounded-xl border-t-2 border-teal-600 bg-white p-4 shadow-md transition-transform duration-300 hover:-translate-y-1 md:p-5'>
+                        {/* Hospital Reegister */}
+                        <div
+                            onClick={() => {
+                                navigate('/auth/hospital/register')
+                            }}
+                            className='group flex cursor-pointer flex-1 flex-col justify-between rounded-xl border-t-2 border-teal-600 bg-white p-4 shadow-md transition-transform duration-300 hover:-translate-y-1 md:p-5'>
                             <div className="mb-3 flex items-center justify-between">
                                 <div className='rounded-lg bg-teal-100 p-2.5 text-teal-700'>
                                     <FaPlusSquare size={20} />
@@ -36,11 +40,11 @@ const HeroSection = () => {
 
                             <div>
                                 <h2 className='mb-1 text-base font-semibold leading-tight text-green-700 md:text-lg'>
-                                    Find a Hospital
+                                    Register Hospital
                                 </h2>
 
                                 <p className='font-normal text-sm text-gray-600'>
-                                    Check live availability near you
+                                    Manage your Hospital a Smart Way
                                 </p>
                             </div>
                         </div>
@@ -63,11 +67,11 @@ const HeroSection = () => {
 
                             <div>
                                 <h2 className='mb-1 text-base font-semibold leading-tight text-gray-700 md:text-lg'>
-                                    Hospital Admin
+                                    Dashboard Login
                                 </h2>
 
                                 <p className='font-normal text-sm text-gray-600'>
-                                    Update Faculty data Instanly
+                                    See your Hospital Status
                                 </p>
                             </div>
                         </div>

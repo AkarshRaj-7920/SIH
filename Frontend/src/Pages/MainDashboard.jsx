@@ -5,7 +5,7 @@ import DshboardNav from '../Components/DashBoard/DshboardNav'
 
 const MainDashboard = () => {
   return (
-    <div className='bg-white text-gray-900 font-sans text-base min-h-screen flex antialiased'>
+    <div className='bg-[#f4f7f6] text-slate-900 min-h-screen flex antialiased'>
       {/* SideBar */}
       <SideBar />
 

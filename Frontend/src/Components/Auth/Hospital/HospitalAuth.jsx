@@ -1,11 +1,15 @@
 import React from 'react'
 import { FaArrowRight, FaHospital, FaHospitalAlt, FaLock } from 'react-icons/fa';
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 const HospitalAuth = () => {
+    const location = useLocation()
+
+    const isLogin = location.pathname.endsWith('/login');
+
     return (
         <div className='flex min-h-screen items-center justify-center overflow-hidden bg-gray-50 font-sans text-gray-900 antialiased'>
-            <main className='mx-auto flex h-screen w-full max-w-7xl items-center justify-center gap-8 px-4 pb-4 pt-20 md:px-10 lg:gap-14'>
+            <main className={`mx-auto flex ${isLogin ? 'flex-row-reverse' : ''} h-screen w-full max-w-7xl items-center justify-center gap-8 px-4 pb-4 pt-20 md:px-10 lg:gap-14`}>
                 {/* Branding Section */}
                 <section className='hidden max-w-lg flex-1 flex-col justify-center lg:flex'>
                     <div className="mb-5">

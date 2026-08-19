@@ -24,7 +24,7 @@ const AuthNavbar = () => {
                 }}
                 className="font-semibold text-xl tracking-tight text-green-800 md:text-2xl cursor-pointer"
             >
-                Vitality Pulse
+                Smart Care
             </a>
 
             <span className="w-16 md:w-20" aria-hidden="true" />
